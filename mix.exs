@@ -22,8 +22,9 @@ defmodule OtelMemTest.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:opentelemetry, "~> 1.0"},
-      {:opentelemetry_exporter, "~> 1.0"}
+      {:opentelemetry_api, github: "tsloughter/opentelemetry-erlang", branch: "drop-spans-no-exporter", override: true, sparse: "apps/opentelemetry_api"},
+      {:opentelemetry, github: "tsloughter/opentelemetry-erlang", branch: "drop-spans-no-exporter", override: true, sparse: "apps/opentelemetry"},
+      {:opentelemetry_exporter, github: "tsloughter/opentelemetry-erlang", branch: "drop-spans-no-exporter", sparse: "apps/opentelemetry_exporter"}
     ]
   end
 end
